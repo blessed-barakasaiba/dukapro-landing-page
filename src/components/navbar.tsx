@@ -23,8 +23,8 @@ const Navbar = () => {
 
     const handleDownLoad = () => {
         const link = document.createElement("a")
-        link.href = `${import.meta.env.BASE_URL}form_six.pdf`
-        link.download = "FormSix.pdf"
+        link.href = `${import.meta.env.BASE_URL}DukaPro.apk`
+        link.download = "DukaPro.apk"
         document.body.appendChild(link)
         link.click()
         document.body.removeChild(link)
