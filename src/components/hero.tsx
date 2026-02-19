@@ -1,3 +1,12 @@
+const handleDownLoad =()=>{
+        const link = document.createElement("a")
+        link.href = "public/form_six.pdf"
+        link.download = "FormSix.pdf"
+        document.body.appendChild(link)
+        link.click()
+        document.body.removeChild(link)
+
+      }
 
 const Hero = () => {
     return (
@@ -11,7 +20,7 @@ const Hero = () => {
                     Monitor Sales, track expenses, manage inventory, and grow your profit all in DukaPro
                 </p>
 
-                <button className="px-8 py-3 bg-red-500 rounded-lg font-semibold hover:bg-red-600 transition mb-8">DownLoad App</button>
+                <button onClick={handleDownLoad} className="px-8 py-3 bg-red-500 rounded-lg font-semibold hover:bg-red-600 transition mb-8">DownLoad App</button>
 
             </div>
 

@@ -19,6 +19,17 @@ const Navbar = () => {
 
         return ()=> window.removeEventListener("handle", handleScroll)
       })
+
+    
+      const handleDownLoad =()=>{
+        const link = document.createElement("a")
+        link.href = "public/form_six.pdf"
+        link.download = "FormSix.pdf"
+        document.body.appendChild(link)
+        link.click()
+        document.body.removeChild(link)
+
+      }
     return (
         <nav className={`w-full fixed shadow-md top-0 z-50 ${scrolled ? "bg-white py-4 shadow-md": "bg-transparent py-z"}`}>
             <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-4  flex justify-between items-center">
@@ -28,30 +39,30 @@ const Navbar = () => {
 
                 {/* DESKTOP NAVBAR*/}
                 <div className="hidden md:flex gap-8 justify-center">
-                    <a href="#home" className="text-white hover:text-red-500 font-medium transition">
+                    <a href="#home" className={` ${scrolled ? "text-gray-700": "text-white"} hover:text-red-500 font-medium transition`}>
                         Home
                     </a>
 
-                    <a href="#features" className="text-white hover:text-red-500 font-medium transition">
+                    <a href="#features" className={` ${scrolled ? "text-gray-700": "text-white"} hover:text-red-500 font-medium transition`}>
                         Features
                     </a>
 
-                    <a href="#pricing" className="text-white hover:text-red-500 font-medium transition">
+                    <a href="#pricing" className={` ${scrolled ? "text-gray-700": "text-white"} hover:text-red-500 font-medium transition `}>
                         Pricing
                     </a>
 
-                    <a href="#testimonies" className="text-white hover:text-red-500 font-medium transition">
+                    <a href="#testimonies" className={` ${scrolled ? "text-gray-700": "text-white"} hover:text-red-500 font-medium transition `}>
                         Testimonies
                     </a>
 
-                    <a href="#contacts" className="text-white hover:text-red-500 font-medium transition">
+                    <a href="#contacts" className={` ${scrolled ? "text-gray-700": "text-white"} hover:text-red-500 font-medium transition`}>
                         Contacts
                     </a>
                 </div>
 
 
                 <div className="hidden md:block">
-                    <Link to={"/"} className="px-5 py-2 bg-red-500  text-white  hover:bg-red-600 border rounded-md transition">Get App</Link>
+                    <button onClick={handleDownLoad} className="px-5 py-2 bg-red-500  text-white  hover:bg-red-600 border rounded-md transition">Get App</button>
                 </div>
 
 
@@ -73,7 +84,7 @@ const Navbar = () => {
                         Testimonies
                     </a>
                     <a href="#contacts" className="block text-gray-700">Contacts</a>
-                    <a href="/" className="block py-2 rounded-lg text-white text-center bg-red-500">Get App</a>
+                    <button onClick={handleDownLoad} className="w-full block py-2 rounded-lg text-white text-center bg-red-500">Get App</button>
                 </div>
             )}
 
