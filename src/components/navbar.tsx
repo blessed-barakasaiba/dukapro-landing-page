@@ -4,11 +4,11 @@ import { Link } from "react-router-dom"
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
-    const [scrolled, setScrolled]= useState(false);
+    const [scrolled, setScrolled] = useState(false);
 
-    useEffect(()=>{
-        const handleScroll =()=>{
-            if(window.scrollY > 250){
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 250) {
                 setScrolled(true);
             } else {
                 setScrolled(false);
@@ -17,21 +17,21 @@ const Navbar = () => {
 
         window.addEventListener("scroll", handleScroll);
 
-        return ()=> window.removeEventListener("handle", handleScroll)
-      })
+        return () => window.removeEventListener("handle", handleScroll)
+    })
 
-    
-      const handleDownLoad =()=>{
+
+    const handleDownLoad = () => {
         const link = document.createElement("a")
-        link.href = "public/form_six.pdf"
+        link.href = `${import.meta.env.BASE_URL}form_six.pdf`
         link.download = "FormSix.pdf"
         document.body.appendChild(link)
         link.click()
         document.body.removeChild(link)
+    }
 
-      }
     return (
-        <nav className={`w-full fixed shadow-md top-0 z-50 ${scrolled ? "bg-white py-4 shadow-md": "bg-transparent py-z"}`}>
+        <nav className={`w-full fixed shadow-md top-0 z-50 ${scrolled ? "bg-white py-4 shadow-md" : "bg-transparent py-z"}`}>
             <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8 py-4  flex justify-between items-center">
                 <div>
                     <Link to={"/"} className="font-bold text-2xl text-red-500 ">DukaPro</Link>
@@ -39,23 +39,23 @@ const Navbar = () => {
 
                 {/* DESKTOP NAVBAR*/}
                 <div className="hidden md:flex gap-8 justify-center">
-                    <a href="#home" className={` ${scrolled ? "text-gray-700": "text-white"} hover:text-red-500 font-medium transition`}>
+                    <a href="#home" className={` ${scrolled ? "text-gray-700" : "text-white"} hover:text-red-500 font-medium transition`}>
                         Home
                     </a>
 
-                    <a href="#features" className={` ${scrolled ? "text-gray-700": "text-white"} hover:text-red-500 font-medium transition`}>
+                    <a href="#features" className={` ${scrolled ? "text-gray-700" : "text-white"} hover:text-red-500 font-medium transition`}>
                         Features
                     </a>
 
-                    <a href="#pricing" className={` ${scrolled ? "text-gray-700": "text-white"} hover:text-red-500 font-medium transition `}>
+                    <a href="#pricing" className={` ${scrolled ? "text-gray-700" : "text-white"} hover:text-red-500 font-medium transition `}>
                         Pricing
                     </a>
 
-                    <a href="#testimonies" className={` ${scrolled ? "text-gray-700": "text-white"} hover:text-red-500 font-medium transition `}>
+                    <a href="#testimonies" className={` ${scrolled ? "text-gray-700" : "text-white"} hover:text-red-500 font-medium transition `}>
                         Testimonies
                     </a>
 
-                    <a href="#contacts" className={` ${scrolled ? "text-gray-700": "text-white"} hover:text-red-500 font-medium transition`}>
+                    <a href="#contacts" className={` ${scrolled ? "text-gray-700" : "text-white"} hover:text-red-500 font-medium transition`}>
                         Contacts
                     </a>
                 </div>

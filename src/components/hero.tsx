@@ -1,12 +1,12 @@
-const handleDownLoad =()=>{
-        const link = document.createElement("a")
-        link.href = "public/form_six.pdf"
-        link.download = "FormSix.pdf"
-        document.body.appendChild(link)
-        link.click()
-        document.body.removeChild(link)
+const handleDownLoad = () => {
+  const link = document.createElement("a")
+  link.href = `${import.meta.env.BASE_URL}form_six.pdf`
+  link.download = "FormSix.pdf"
+  document.body.appendChild(link)
+  link.click()
+  document.body.removeChild(link)
+}
 
-      }
 
 const Hero = () => {
     return (

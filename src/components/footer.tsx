@@ -1,5 +1,4 @@
-import { Facebook, Instagram, MessageCircle, Twitter } from 'lucide-react'
-import React from 'react'
+import { Facebook, Twitter } from 'lucide-react'
 import { FaInstagram, FaWhatsapp } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
 

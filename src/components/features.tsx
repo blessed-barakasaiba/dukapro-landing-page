@@ -34,7 +34,7 @@ const Features = () => {
     <div id="features" className="min-h-[500px]">
         <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
             <div>
-                <h2 className="text-3xl font-semibold mb-4 text-center">Control Your Business And Track Sales Easily</h2>
+                <h2 className="text-3xl md:text-5xl font-semibold mb-4 text-center">Control Your Business And Track Sales Easily</h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     {items.map((item)=>(
